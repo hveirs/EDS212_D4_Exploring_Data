@@ -2,5 +2,6 @@
 
 ### Exploring Data - Intro
 
--Some useful plots
--Summary Statistics
+- Some useful plots
+
+- Summary Statistics
