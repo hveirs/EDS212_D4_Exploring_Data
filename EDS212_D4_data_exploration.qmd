@@ -28,8 +28,6 @@ library(skimr)
 Ways to check out and view the data:
 
 ```{r}
-#| include: false
-
 # Find the column names:
 names(penguins)
 
@@ -43,4 +41,38 @@ head(penguins)
 tail(penguins)
 
 ```
+
+```{r}
+#| include: false 
+
+
+# skim
+skim(penguins)
+GGally::ggpairs(penguins)
+
+```
+
+```{r}
+#| fig-cap: "Figure 1 Caption"
+
+
+ggplot(penguins, aes(species, flipper_length_mm)) +
+  geom_jitter(width = 0.2, 
+              alpha = 0.5, 
+              aes(color = species)) + 
+  geom_boxplot(fill = NA) +
+  theme_light() + 
+  scale_color_manual(values = c("darkorchid4", "cyan4", "goldenrod")) + 
+  labs(x = "Penguin Species",
+       y = "Flipper Length (mm)", 
+       title = "Palmer Archipelago Penguin Flipper Length")
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_depth_mm)) +
+  geom_histogram(aes(fill = species), color = "blue") + 
+  facet_wrap(~species, ncol = 1)
+
+```
+
 
