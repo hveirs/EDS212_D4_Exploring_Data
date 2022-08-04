@@ -1,0 +1,46 @@
+---
+title: "Exploring Data and visualization"
+author: "Hailey Veirs"
+format: html
+editor: visual
+---
+
+Note: To control what shows up in the html/rendered file in a quarto doc, 
+use a "hash-pipe" which is "#| " then warning: false, which makes warnings
+disappear, or echo: false, which keeps the code from showing up but outputs 
+are still shown. "include: false" makes the code and outputs not included in 
+the render.
+
+```{r}
+#| warning: false
+#| echo: false
+
+
+library(tidyverse)
+library(palmerpenguins)
+library(GGally)
+library(skimr)
+
+```
+
+## Exploratory Data Viz
+
+Ways to check out and view the data:
+
+```{r}
+#| include: false
+
+# Find the column names:
+names(penguins)
+
+# Find the dimensions
+dim(penguins)
+
+#Show the first 6 lines
+head(penguins)
+
+# Last 6 lines
+tail(penguins)
+
+```
+
